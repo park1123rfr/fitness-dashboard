@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-02T22:37:53.209Z",
+  "updated_at": "2026-05-02T23:40:08.355Z",
   "total": 51,
   "workouts": [
     {
@@ -6547,7 +6547,7 @@
         },
         {
           "index": 2,
-          "title": "렛 풀다운 - 좁은 ��립 (케이블)",
+          "title": "렛 풀다운 - 좁은 그립 (케이블)",
           "notes": "",
           "exercise_template_id": "4E5257DE",
           "superset_id": null,
@@ -10493,7 +10493,7 @@
         },
         {
           "index": 4,
-          "title": "리버스 펙덱 플라이 (��신)",
+          "title": "리버스 펙덱 플라이 (머신)",
           "notes": "",
           "exercise_template_id": "D8281C62",
           "superset_id": null,
