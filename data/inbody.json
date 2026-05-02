@@ -1,0 +1,15 @@
+{
+  "measurements": [
+    {
+      "date": "2025-01-01",
+      "weight": 75.0,
+      "body_fat_percent": 18.0,
+      "muscle_mass": 58.5,
+      "body_fat_mass": 13.5,
+      "bmi": 23.5,
+      "visceral_fat_level": 8,
+      "bmr": 1750,
+      "total_body_water": 41.2
+    }
+  ]
+}
