@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-02T18:03:21.986Z",
+  "updated_at": "2026-05-02T18:04:16.941Z",
   "total": 50,
   "workouts": [
     {
@@ -977,7 +977,7 @@
         },
         {
           "index": 2,
-          "title": "��글 레그 스탠딩 카프 레이즈 (머신)",
+          "title": "싱글 레그 스탠딩 카프 레이즈 (머신)",
           "notes": "",
           "exercise_template_id": "B05C2C29",
           "superset_id": null,
