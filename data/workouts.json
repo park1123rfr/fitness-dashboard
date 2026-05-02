@@ -1,7 +1,38 @@
 {
-  "updated_at": "2026-05-02T18:04:16.941Z",
-  "total": 50,
+  "updated_at": "2026-05-02T19:06:21.202Z",
+  "total": 51,
   "workouts": [
+    {
+      "id": "e6028e0e-4328-4886-9107-cb1f837865be",
+      "title": "아침 운동 ☀️",
+      "routine_id": null,
+      "description": "",
+      "start_time": "2026-05-02T18:08:36+00:00",
+      "end_time": "2026-05-02T18:08:59+00:00",
+      "updated_at": "2026-05-02T18:09:01.303Z",
+      "created_at": "2026-05-02T18:09:01.303Z",
+      "exercises": [
+        {
+          "index": 0,
+          "title": "케이블 트위스트(위에서 아래로)",
+          "notes": "",
+          "exercise_template_id": "A2D838BD",
+          "superset_id": null,
+          "sets": [
+            {
+              "index": 0,
+              "type": "normal",
+              "weight_kg": 30,
+              "reps": 10,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": null,
+              "custom_metric": null
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "548ab06a-eec6-45af-bc36-c0088009afb4",
       "title": "스트랭스",
