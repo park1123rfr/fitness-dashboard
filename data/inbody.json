@@ -2,14 +2,25 @@
   "measurements": [
     {
       "date": "2025-01-01",
-      "weight": 75.0,
-      "body_fat_percent": 18.0,
+      "weight": 75,
+      "body_fat_percent": 18,
       "muscle_mass": 58.5,
       "body_fat_mass": 13.5,
       "bmi": 23.5,
       "visceral_fat_level": 8,
       "bmr": 1750,
       "total_body_water": 41.2
+    },
+    {
+      "date": "2026-04-26",
+      "weight": 82.6,
+      "muscle_mass": 38.3,
+      "fat_mass": 15.7,
+      "bmi": 25.5,
+      "body_fat_percent": 19,
+      "bmr": 1816,
+      "inbody_score": 83,
+      "visceral_fat_level": null
     }
   ]
 }

@@ -1,7 +1,78 @@
 {
-  "updated_at": "2026-05-02T23:40:08.355Z",
-  "total": 51,
+  "updated_at": "2026-05-03T01:33:42.405Z",
+  "total": 52,
   "workouts": [
+    {
+      "id": "efd58d62-609d-47f0-aedf-3890829c6bdf",
+      "title": "아침 운동 ☀️",
+      "routine_id": null,
+      "description": "",
+      "start_time": "2026-05-03T01:22:53+00:00",
+      "end_time": "2026-05-03T01:23:06+00:00",
+      "updated_at": "2026-05-03T01:23:08.164Z",
+      "created_at": "2026-05-03T01:23:08.164Z",
+      "exercises": [
+        {
+          "index": 0,
+          "title": "오버헤드 프레드 (바벨)",
+          "notes": "",
+          "exercise_template_id": "7B8D84E8",
+          "superset_id": null,
+          "sets": [
+            {
+              "index": 0,
+              "type": "normal",
+              "weight_kg": 40,
+              "reps": 5,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": null,
+              "custom_metric": null
+            },
+            {
+              "index": 1,
+              "type": "normal",
+              "weight_kg": 40,
+              "reps": 5,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": null,
+              "custom_metric": null
+            },
+            {
+              "index": 2,
+              "type": "normal",
+              "weight_kg": 40,
+              "reps": 5,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": null,
+              "custom_metric": null
+            },
+            {
+              "index": 3,
+              "type": "normal",
+              "weight_kg": 40,
+              "reps": 5,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": null,
+              "custom_metric": null
+            },
+            {
+              "index": 4,
+              "type": "normal",
+              "weight_kg": 40,
+              "reps": 3,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": null,
+              "custom_metric": null
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "e6028e0e-4328-4886-9107-cb1f837865be",
       "title": "아침 운동 ☀️",
