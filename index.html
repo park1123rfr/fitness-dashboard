@@ -502,7 +502,7 @@ function buildCharts(workouts, inbody) {
       labels: m.map((x) => fmt(x.date)),
       datasets: [
         { label: '골격근량', data: m.map((x) => x.muscle_mass), borderColor: '#43e97b', backgroundColor: '#43e97b22', tension: 0.4, fill: false, pointRadius: 4 },
-        { label: '체지방량', data: m.map((x) => x.body_fat_mass), borderColor: '#ff6584', backgroundColor: '#ff658422', tension: 0.4, fill: false, pointRadius: 4 },
+        { label: '체지방량', data: m.map((x) => x.fat_mass ?? x.body_fat_mass), borderColor: '#ff6584', backgroundColor: '#ff658422', tension: 0.4, fill: false, pointRadius: 4 },
       ],
     }, { extra: { plugins: { legend: { display: true } } } });
   }
@@ -517,10 +517,10 @@ const NSCA_MULT = {
 };
 
 const RM_MATCH = {
-  squat:    (n) => /squat/i.test(n) && !/hack|belt\s*squat/i.test(n),
-  bench:    (n) => /bench/i.test(n),
-  deadlift: (n) => /deadlift/i.test(n),
-  ohp:      (n) => /overhead\s*press|military\s*press|\bohp\b/i.test(n),
+  squat:    (n) => (/squat/i.test(n) || /스쿼트/.test(n)) && !/hack|belt|핵|벨트/.test(n),
+  bench:    (n) => /bench/i.test(n) || /벤치/.test(n),
+  deadlift: (n) => /deadlift/i.test(n) || /데드리프트/.test(n),
+  ohp:      (n) => /overhead\s*press|military\s*press|\bohp\b/i.test(n) || /오버헤드\s*프레스|밀리터리\s*프레스|숄더\s*프레스/.test(n),
 };
 
 function calcOneRM(workouts) {
