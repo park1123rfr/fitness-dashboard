@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-03T22:37:42.099Z",
+  "updated_at": "2026-05-03T23:41:36.232Z",
   "total": 53,
   "workouts": [
     {
@@ -1267,7 +1267,7 @@
       "exercises": [
         {
           "index": 0,
-          "title": "시티드 레그 컬 (머신)",
+          "title": "��티드 레그 컬 (머신)",
           "notes": "",
           "exercise_template_id": "11A123F3",
           "superset_id": null,
