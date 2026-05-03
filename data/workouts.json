@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-03T05:56:36.231Z",
+  "updated_at": "2026-05-03T08:02:30.980Z",
   "total": 53,
   "workouts": [
     {
@@ -1267,7 +1267,7 @@
       "exercises": [
         {
           "index": 0,
-          "title": "��티드 레그 컬 (머신)",
+          "title": "시티드 레그 컬 (머신)",
           "notes": "",
           "exercise_template_id": "11A123F3",
           "superset_id": null,
@@ -3805,7 +3805,7 @@
         },
         {
           "index": 3,
-          "title": "T 바 로우",
+          "title": "T 바 로��",
           "notes": "",
           "exercise_template_id": "08A2974E",
           "superset_id": null,
