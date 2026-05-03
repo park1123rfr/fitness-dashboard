@@ -517,10 +517,10 @@ const NSCA_MULT = {
 };
 
 const RM_MATCH = {
-  squat:    (n) => (/squat/i.test(n) || /스쿼트/.test(n)) && !/hack|belt|핵|벨트/.test(n),
-  bench:    (n) => /bench/i.test(n) || /벤치/.test(n),
-  deadlift: (n) => /deadlift/i.test(n) || /데드리프트/.test(n),
-  ohp:      (n) => /overhead\s*press|military\s*press|\bohp\b/i.test(n) || /오버헤드\s*프레스|밀리터리\s*프레스|숄더\s*프레스/.test(n),
+  squat:    (n) => n === '스쿼트 (바벨)',
+  bench:    (n) => n === '벤치 프레스 (바벨)',
+  deadlift: (n) => n === '데드리프트 (바벨)',
+  ohp:      (n) => n === '오버헤드 프레드 (바벨)',
 };
 
 function calcOneRM(workouts) {
