@@ -75,6 +75,18 @@
     .kpi-card.c3::before { background: var(--accent3); }
     .kpi-card.c4::before { background: #f9a825; }
     .kpi-card.c5::before { background: #29b6f6; }
+    .kpi-card.c6::before { background: #ef5350; }
+    .kpi-card.c7::before { background: #ff9800; }
+    .kpi-card.c8::before { background: #ab47bc; }
+    .kpi-card.c9::before { background: #26c6da; }
+
+    /* ── 1RM Grid ── */
+    .rm-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 16px;
+      margin-bottom: 28px;
+    }
     .kpi-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 8px; }
     .kpi-value { font-size: 2rem; font-weight: 700; line-height: 1; }
     .kpi-unit { font-size: 0.85rem; color: var(--muted); margin-left: 4px; }
@@ -268,6 +280,34 @@
     <div class="chart-card">
       <div class="section-title"><span class="dot" style="background:#29b6f6"></span>체성분 변화</div>
       <canvas id="chartComposition"></canvas>
+    </div>
+  </div>
+
+  <!-- Estimated 1RM -->
+  <div class="section-title">
+    <span class="dot" style="background:#ef5350"></span>추정 1RM
+    <span style="font-size:.7rem;color:var(--muted);font-weight:400;">(NSCA 멀티플라이어)</span>
+  </div>
+  <div class="rm-grid">
+    <div class="kpi-card c6">
+      <div class="kpi-label">스쿼트</div>
+      <div class="kpi-value" id="rm-squat">–<span class="kpi-unit">kg</span></div>
+      <div class="kpi-sub" id="rm-squat-sub">데이터 없음</div>
+    </div>
+    <div class="kpi-card c7">
+      <div class="kpi-label">벤치프레스</div>
+      <div class="kpi-value" id="rm-bench">–<span class="kpi-unit">kg</span></div>
+      <div class="kpi-sub" id="rm-bench-sub">데이터 없음</div>
+    </div>
+    <div class="kpi-card c8">
+      <div class="kpi-label">데드리프트</div>
+      <div class="kpi-value" id="rm-deadlift">–<span class="kpi-unit">kg</span></div>
+      <div class="kpi-sub" id="rm-deadlift-sub">데이터 없음</div>
+    </div>
+    <div class="kpi-card c9">
+      <div class="kpi-label">오버헤드프레스</div>
+      <div class="kpi-value" id="rm-ohp">–<span class="kpi-unit">kg</span></div>
+      <div class="kpi-sub" id="rm-ohp-sub">데이터 없음</div>
     </div>
   </div>
 
@@ -468,6 +508,55 @@ function buildCharts(workouts, inbody) {
   }
 }
 
+// ── 1RM Estimation (NSCA multiplier table) ───────────────────
+const NSCA_MULT = {
+  squat:    [1.000,1.0475,1.13,1.1575,1.20,1.242,1.284,1.326,1.368,1.41,1.452,1.494],
+  bench:    [1.000,1.035, 1.08,1.115, 1.15,1.18, 1.22, 1.255,1.29, 1.325,1.36, 1.395],
+  deadlift: [1.000,1.065, 1.13,1.147, 1.164,1.181,1.198,1.22, 1.232,1.24, 1.252,1.264],
+  ohp:      [1.000,1.035, 1.08,1.115, 1.15,1.18, 1.22, 1.255,1.29, 1.325,1.36, 1.395],
+};
+
+const RM_MATCH = {
+  squat:    (n) => /squat/i.test(n) && !/hack|belt\s*squat/i.test(n),
+  bench:    (n) => /bench/i.test(n),
+  deadlift: (n) => /deadlift/i.test(n),
+  ohp:      (n) => /overhead\s*press|military\s*press|\bohp\b/i.test(n),
+};
+
+function calcOneRM(workouts) {
+  const best = { squat: null, bench: null, deadlift: null, ohp: null };
+  workouts.forEach((w) => {
+    (w.exercises || []).forEach((ex) => {
+      for (const [key, match] of Object.entries(RM_MATCH)) {
+        if (!match(ex.title || '')) continue;
+        (ex.sets || []).forEach((s) => {
+          const kg = s.weight_kg, reps = s.reps;
+          if (!kg || !reps || reps < 1 || reps > 12) return;
+          const e1rm = Math.round(kg * NSCA_MULT[key][reps - 1]);
+          if (!best[key] || e1rm > best[key].e1rm) {
+            best[key] = { e1rm, kg, reps, date: w.start_time?.slice(0, 10) };
+          }
+        });
+      }
+    });
+  });
+  return best;
+}
+
+function renderOneRM(best) {
+  [
+    ['squat',    'rm-squat'],
+    ['bench',    'rm-bench'],
+    ['deadlift', 'rm-deadlift'],
+    ['ohp',      'rm-ohp'],
+  ].forEach(([key, id]) => {
+    const v = best[key];
+    if (!v) return;
+    $(id).childNodes[0].textContent = v.e1rm;
+    $(`${id}-sub`).textContent = `${v.kg}kg × ${v.reps}회 (${v.date || ''})`;
+  });
+}
+
 // ── Main ──────────────────────────────────────────────────────
 (async () => {
   try {
@@ -484,6 +573,7 @@ function buildCharts(workouts, inbody) {
     buildHeatmap(workouts);
     renderWorkoutList(workouts);
     buildCharts(workouts, inbody);
+    renderOneRM(calcOneRM(workouts));
   } catch (e) {
     console.error(e);
     $('last-updated').textContent = '데이터 로드 실패';
