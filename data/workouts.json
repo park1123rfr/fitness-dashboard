@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-03T15:44:15.365Z",
+  "updated_at": "2026-05-03T16:45:35.743Z",
   "total": 53,
   "workouts": [
     {
@@ -6796,7 +6796,7 @@
       "exercises": [
         {
           "index": 0,
-          "title": "���트레이트 암 풀다운 (케이블)",
+          "title": "스트레이트 암 풀다운 (케이블)",
           "notes": "",
           "exercise_template_id": "D2387AB1",
           "superset_id": null,
