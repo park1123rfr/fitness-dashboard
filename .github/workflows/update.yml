@@ -34,11 +34,11 @@ jobs:
             echo "data/inbody_import.csv not found, skipping."
           fi
 
-      - name: Generate Claude Feedback
+      - name: Generate Gemini Feedback
         run: node scripts/daily_feedback.js
         env:
           HEVY_API_KEY: ${{ secrets.HEVY_API_KEY }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
       - name: Commit & Push
         run: |
