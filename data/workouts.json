@@ -1,7 +1,292 @@
 {
-  "updated_at": "2026-05-04T02:37:27.836Z",
-  "total": 53,
+  "updated_at": "2026-05-04T06:10:03.207Z",
+  "total": 54,
   "workouts": [
+    {
+      "id": "fc049a1d-a0ec-49f5-9dc7-5d5b32d272b6",
+      "title": "등 어깨 근비대",
+      "routine_id": "f6339b64-0e71-445f-b015-0efac8299dea",
+      "description": "",
+      "start_time": "2026-05-04T04:43:05+00:00",
+      "end_time": "2026-05-04T06:04:51+00:00",
+      "updated_at": "2026-05-04T06:04:55.364Z",
+      "created_at": "2026-05-04T06:04:55.364Z",
+      "exercises": [
+        {
+          "index": 0,
+          "title": "시티드 숄더 프레드 (머신)",
+          "notes": "",
+          "exercise_template_id": "9237BAD1",
+          "superset_id": null,
+          "sets": [
+            {
+              "index": 0,
+              "type": "normal",
+              "weight_kg": 35,
+              "reps": 12,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": 7,
+              "custom_metric": null
+            },
+            {
+              "index": 1,
+              "type": "normal",
+              "weight_kg": 32.5,
+              "reps": 12,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": 8,
+              "custom_metric": null
+            },
+            {
+              "index": 2,
+              "type": "normal",
+              "weight_kg": 32.5,
+              "reps": 12,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": 8,
+              "custom_metric": null
+            },
+            {
+              "index": 3,
+              "type": "normal",
+              "weight_kg": 32.5,
+              "reps": 12,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": 9,
+              "custom_metric": null
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "title": "레터럴 레이즈 (머신)",
+          "notes": "",
+          "exercise_template_id": "D5D0354D",
+          "superset_id": null,
+          "sets": [
+            {
+              "index": 0,
+              "type": "normal",
+              "weight_kg": 40,
+              "reps": 12,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": 8,
+              "custom_metric": null
+            },
+            {
+              "index": 1,
+              "type": "normal",
+              "weight_kg": 40,
+              "reps": 12,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": 8,
+              "custom_metric": null
+            },
+            {
+              "index": 2,
+              "type": "normal",
+              "weight_kg": 40,
+              "reps": 12,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": 8,
+              "custom_metric": null
+            },
+            {
+              "index": 3,
+              "type": "normal",
+              "weight_kg": 40,
+              "reps": 12,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": 8,
+              "custom_metric": null
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "title": "리버스 펙덱 플라이 (머신)",
+          "notes": "",
+          "exercise_template_id": "D8281C62",
+          "superset_id": null,
+          "sets": [
+            {
+              "index": 0,
+              "type": "normal",
+              "weight_kg": 40,
+              "reps": 8,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": null,
+              "custom_metric": null
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "title": "Pullover (Machine)",
+          "notes": "",
+          "exercise_template_id": "B123DD01",
+          "superset_id": null,
+          "sets": [
+            {
+              "index": 0,
+              "type": "normal",
+              "weight_kg": 49.895220037920375,
+              "reps": 10,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": 7,
+              "custom_metric": null
+            },
+            {
+              "index": 1,
+              "type": "normal",
+              "weight_kg": 56.69911367945497,
+              "reps": 10,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": 8,
+              "custom_metric": null
+            },
+            {
+              "index": 2,
+              "type": "normal",
+              "weight_kg": 63.50300732098956,
+              "reps": 10,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": 9.5,
+              "custom_metric": null
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "title": "아이소 레터럴 하이 로우 (머신)",
+          "notes": "",
+          "exercise_template_id": "BC3492DA",
+          "superset_id": null,
+          "sets": [
+            {
+              "index": 0,
+              "type": "normal",
+              "weight_kg": 100,
+              "reps": 10,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": 8,
+              "custom_metric": null
+            },
+            {
+              "index": 1,
+              "type": "normal",
+              "weight_kg": 100,
+              "reps": 10,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": 8,
+              "custom_metric": null
+            },
+            {
+              "index": 2,
+              "type": "normal",
+              "weight_kg": 100,
+              "reps": 10,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": 8.5,
+              "custom_metric": null
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "title": "Iso-Lateral Low Row",
+          "notes": "",
+          "exercise_template_id": "91FAFBA3",
+          "superset_id": null,
+          "sets": [
+            {
+              "index": 0,
+              "type": "normal",
+              "weight_kg": 60,
+              "reps": 10,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": 7,
+              "custom_metric": null
+            },
+            {
+              "index": 1,
+              "type": "normal",
+              "weight_kg": 70,
+              "reps": 10,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": 8,
+              "custom_metric": null
+            },
+            {
+              "index": 2,
+              "type": "normal",
+              "weight_kg": 80,
+              "reps": 10,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": 9.5,
+              "custom_metric": null
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "title": "아이소 레터럴 로우 (머신)",
+          "notes": "",
+          "exercise_template_id": "AA1EB7D8",
+          "superset_id": null,
+          "sets": [
+            {
+              "index": 0,
+              "type": "normal",
+              "weight_kg": 20,
+              "reps": 10,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": 6,
+              "custom_metric": null
+            },
+            {
+              "index": 1,
+              "type": "normal",
+              "weight_kg": 40,
+              "reps": 10,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": 7,
+              "custom_metric": null
+            },
+            {
+              "index": 2,
+              "type": "normal",
+              "weight_kg": 40,
+              "reps": 10,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": 7,
+              "custom_metric": null
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "274cda23-9a13-4b4d-8492-c07abe8aa5b1",
       "title": "하체 근비대",
@@ -4789,7 +5074,7 @@
         },
         {
           "index": 4,
-          "title": "아이소 레터럴 하이 로우 (��신)",
+          "title": "아이소 레터럴 하이 로우 (머신)",
           "notes": "",
           "exercise_template_id": "BC3492DA",
           "superset_id": null,
@@ -9982,7 +10267,7 @@
         },
         {
           "index": 4,
-          "title": "리버스 펙덱 플라이 (머신)",
+          "title": "리버스 펙덱 플라이 (���신)",
           "notes": "",
           "exercise_template_id": "D8281C62",
           "superset_id": null,
