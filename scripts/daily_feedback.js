@@ -3,10 +3,10 @@ const fs = require('fs');
 const path = require('path');
 
 const HEVY_API_KEY = process.env.HEVY_API_KEY;
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
 
 if (!HEVY_API_KEY) { console.error('HEVY_API_KEY is not set'); process.exit(1); }
-if (!GEMINI_API_KEY) { console.error('GEMINI_API_KEY is not set'); process.exit(1); }
+if (!ANTHROPIC_API_KEY) { console.error('ANTHROPIC_API_KEY is not set'); process.exit(1); }
 
 function httpsRequest(url, options, body) {
   return new Promise((resolve, reject) => {
@@ -45,16 +45,25 @@ async function generateFeedback(workout) {
   const workoutText = JSON.stringify(workout, null, 2);
   const prompt = `다음 운동 기록을 분석해서 한국어로 피드백 해줘. 볼륨, 강도, 잘한 점, 개선점, 다음 운동 조언을 포함해줘: ${workoutText}`;
 
-  const body = JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] });
+  const body = JSON.stringify({
+    model: 'claude-haiku-4-5-20251001',
+    max_tokens: 1024,
+    messages: [{ role: 'user', content: prompt }],
+  });
   const data = await httpsRequest(
-    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`,
+    'https://api.anthropic.com/v1/messages',
     {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(body) },
+      headers: {
+        'Content-Type': 'application/json',
+        'Content-Length': Buffer.byteLength(body),
+        'x-api-key': ANTHROPIC_API_KEY,
+        'anthropic-version': '2023-06-01',
+      },
     },
     body
   );
-  return data.candidates?.[0]?.content?.parts?.[0]?.text ?? '';
+  return data.content?.[0]?.text ?? '';
 }
 
 async function main() {
@@ -66,7 +75,7 @@ async function main() {
   }
   console.log(`Latest workout: ${workout.title} (${workout.start_time?.slice(0, 10)})`);
 
-  console.log('Generating Gemini feedback...');
+  console.log('Generating Claude feedback...');
   const feedback = await generateFeedback(workout);
 
   const feedbackPath = path.join(__dirname, '..', 'data', 'feedback.json');
