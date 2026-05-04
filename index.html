@@ -244,6 +244,132 @@
       pointer-events: none;
       z-index: 200;
     }
+
+    /* ── Tabs ── */
+    .tab-bar {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .tab-btn {
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      color: var(--muted);
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 10px 18px;
+      margin-bottom: -1px;
+      transition: color .15s, border-color .15s;
+    }
+    .tab-btn:hover { color: var(--text); }
+    .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* ── AI Coach ── */
+    .key-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .key-row label { font-size: 0.82rem; color: var(--muted); white-space: nowrap; }
+    .key-input {
+      flex: 1;
+      min-width: 200px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-family: monospace;
+      font-size: 0.82rem;
+      padding: 8px 12px;
+      outline: none;
+    }
+    .key-input:focus { border-color: var(--accent); }
+    .btn-save {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 8px 14px;
+      transition: border-color .15s;
+      white-space: nowrap;
+    }
+    .btn-save:hover { border-color: var(--accent); }
+    .btn-feedback {
+      background: linear-gradient(135deg, var(--accent), var(--accent3));
+      border: none;
+      border-radius: 12px;
+      color: #fff;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 14px 28px;
+      margin-bottom: 24px;
+      transition: opacity .15s, transform .1s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-feedback:hover { opacity: .88; transform: translateY(-1px); }
+    .btn-feedback:disabled { opacity: .4; cursor: not-allowed; transform: none; }
+    .chat-area { display: flex; flex-direction: column; gap: 14px; }
+    .chat-msg {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .chat-msg::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      border-radius: 14px 14px 0 0;
+      background: linear-gradient(90deg, var(--accent), var(--accent3));
+    }
+    .chat-msg-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+    .chat-msg-badge {
+      background: linear-gradient(90deg, #6c63ff22, #43e97b22);
+      border: 1px solid #6c63ff44;
+      border-radius: 20px;
+      color: var(--accent3);
+      font-size: 0.7rem;
+      padding: 2px 10px;
+    }
+    .chat-msg-workout { font-size: 0.88rem; font-weight: 600; }
+    .chat-msg-date { font-size: 0.75rem; color: var(--muted); margin-left: auto; }
+    .chat-msg-body { font-size: 0.88rem; line-height: 1.8; white-space: pre-wrap; }
+    .chat-empty { text-align: center; color: var(--muted); padding: 48px 0; font-size: .9rem; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .spinner {
+      display: inline-block;
+      width: 15px; height: 15px;
+      border: 2px solid rgba(255,255,255,.35);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin .65s linear infinite;
+      vertical-align: middle;
+    }
   </style>
 </head>
 <body>
@@ -254,6 +380,13 @@
 </header>
 
 <main>
+  <!-- Tab Navigation -->
+  <div class="tab-bar">
+    <button class="tab-btn active" data-tab="dashboard">📊 대시보드</button>
+    <button class="tab-btn" data-tab="ai-coach">🤖 AI 코치</button>
+  </div>
+
+  <div id="tab-dashboard" class="tab-panel active">
   <!-- KPI -->
   <div class="kpi-grid">
     <div class="kpi-card c1">
@@ -364,6 +497,24 @@
   <div id="feedback-list">
     <div class="empty">AI 피드백 데이터를 불러오는 중…</div>
   </div>
+  </div><!-- /tab-dashboard -->
+
+  <!-- AI 코치 Tab -->
+  <div id="tab-ai-coach" class="tab-panel">
+    <div style="max-width:720px">
+      <div class="key-row">
+        <label for="claude-key-input">Claude API 키</label>
+        <input class="key-input" id="claude-key-input" type="password" placeholder="sk-ant-api03-…" autocomplete="off" />
+        <button class="btn-save" id="save-key-btn">저장</button>
+      </div>
+      <button class="btn-feedback" id="feedback-today-btn">
+        <span id="feedback-btn-inner">✨ 오늘 운동 피드백</span>
+      </button>
+      <div class="chat-area" id="chat-area">
+        <div class="chat-empty" id="chat-empty">API 키를 입력하고 버튼을 누르면 최근 운동 피드백을 받을 수 있습니다.</div>
+      </div>
+    </div>
+  </div>
 </main>
 
 <script>
@@ -397,6 +548,8 @@ function makeChart(id, type, data, options = {}) {
     },
   });
 }
+
+let allWorkouts = [];
 
 // ── Workout Data ──────────────────────────────────────────────
 async function loadWorkouts() {
@@ -638,6 +791,7 @@ function renderOneRM(best) {
   try {
     const [wData, inbody, feedbackData] = await Promise.all([loadWorkouts(), loadInbody(), loadFeedback()]);
     const workouts = wData.workouts || [];
+    allWorkouts = workouts;
 
     if (wData.updated_at) {
       $('last-updated').textContent = '마지막 업데이트: ' + new Date(wData.updated_at).toLocaleString('ko-KR');
@@ -657,6 +811,96 @@ function renderOneRM(best) {
     $('workout-list').innerHTML = '<div class="empty">데이터를 불러올 수 없습니다.</div>';
   }
 })();
+// ── Tab Navigation ───────────────────────────────────────────
+document.querySelectorAll('.tab-btn').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach((b) => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach((p) => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+  });
+});
+
+// ── AI Coach ────────────────────────────────────────────────
+(function initKeyUI() {
+  const input = $('claude-key-input');
+  const saved = localStorage.getItem('claude_api_key');
+  if (saved) input.value = saved;
+
+  $('save-key-btn').addEventListener('click', () => {
+    const key = input.value.trim();
+    if (!key) return;
+    localStorage.setItem('claude_api_key', key);
+    const btn = $('save-key-btn');
+    btn.textContent = '저장됨 ✓';
+    setTimeout(() => { btn.textContent = '저장'; }, 1800);
+  });
+})();
+
+$('feedback-today-btn').addEventListener('click', async () => {
+  const apiKey = localStorage.getItem('claude_api_key') || $('claude-key-input').value.trim();
+  if (!apiKey) {
+    alert('Claude API 키를 먼저 입력하고 저장해주세요.');
+    return;
+  }
+
+  const latest = [...allWorkouts].sort((a, b) => new Date(b.start_time) - new Date(a.start_time))[0];
+  if (!latest) {
+    alert('운동 데이터가 없습니다. 잠시 후 다시 시도해주세요.');
+    return;
+  }
+
+  const btn = $('feedback-today-btn');
+  const inner = $('feedback-btn-inner');
+  btn.disabled = true;
+  inner.innerHTML = '<span class="spinner"></span> 분석 중…';
+
+  const chatArea = $('chat-area');
+  const emptyEl = $('chat-empty');
+  if (emptyEl) emptyEl.remove();
+
+  const msgId = 'msg-' + Date.now();
+  chatArea.insertAdjacentHTML('afterbegin', `
+    <div class="chat-msg" id="${msgId}">
+      <div class="chat-msg-header">
+        <span class="chat-msg-badge">✨ Claude AI</span>
+        <span class="chat-msg-workout">${(latest.title || '운동').replace(/</g, '&lt;')}</span>
+        <span class="chat-msg-date">${fmtFull(latest.start_time)}</span>
+      </div>
+      <div class="chat-msg-body" id="${msgId}-body">분석 중…</div>
+    </div>`);
+
+  try {
+    const prompt = `다음 운동 기록을 분석해서 한국어로 피드백 해줘. 볼륨, 강도, 잘한 점, 개선점, 다음 운동 조언 포함: ${JSON.stringify(latest, null, 2)}`;
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': apiKey,
+        'anthropic-version': '2023-06-01',
+      },
+      body: JSON.stringify({
+        model: 'claude-opus-4-7',
+        max_tokens: 1024,
+        messages: [{ role: 'user', content: prompt }],
+      }),
+    });
+
+    if (!res.ok) {
+      const errText = await res.text();
+      throw new Error(`API 오류 ${res.status}: ${errText}`);
+    }
+
+    const data = await res.json();
+    const text = data.content?.[0]?.text ?? '(응답 없음)';
+    document.getElementById(msgId + '-body').textContent = text;
+  } catch (err) {
+    document.getElementById(msgId + '-body').textContent = '⚠️ ' + err.message;
+  } finally {
+    btn.disabled = false;
+    inner.textContent = '✨ 오늘 운동 피드백';
+  }
+});
 </script>
 </body>
 </html>
