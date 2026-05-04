@@ -492,7 +492,7 @@
   <!-- AI 피드백 -->
   <div class="section-title" style="margin-top:28px">
     <span class="dot" style="background:var(--accent3)"></span>AI 피드백
-    <span style="font-size:.7rem;color:var(--muted);font-weight:400;">(Gemini 2.0 Flash)</span>
+    <span style="font-size:.7rem;color:var(--muted);font-weight:400;">(Claude AI)</span>
   </div>
   <div id="feedback-list">
     <div class="empty">AI 피드백 데이터를 불러오는 중…</div>
@@ -502,16 +502,12 @@
   <!-- AI 코치 Tab -->
   <div id="tab-ai-coach" class="tab-panel">
     <div style="max-width:720px">
-      <div class="key-row">
-        <label for="claude-key-input">Claude API 키</label>
-        <input class="key-input" id="claude-key-input" type="password" placeholder="sk-ant-api03-…" autocomplete="off" />
-        <button class="btn-save" id="save-key-btn">저장</button>
+      <div class="section-title">
+        <span class="dot" style="background:var(--accent3)"></span>Claude AI 피드백
+        <span style="font-size:.7rem;color:var(--muted);font-weight:400;">(GitHub Actions 자동 생성 · 매시간)</span>
       </div>
-      <button class="btn-feedback" id="feedback-today-btn">
-        <span id="feedback-btn-inner">✨ 오늘 운동 피드백</span>
-      </button>
-      <div class="chat-area" id="chat-area">
-        <div class="chat-empty" id="chat-empty">API 키를 입력하고 버튼을 누르면 최근 운동 피드백을 받을 수 있습니다.</div>
+      <div class="chat-area" id="coach-feedback-list">
+        <div class="chat-empty">피드백 데이터를 불러오는 중…</div>
       </div>
     </div>
   </div>
@@ -581,7 +577,7 @@ function renderFeedback(data) {
   }
   container.innerHTML = feedbacks.map((f) => `
     <div class="feedback-card">
-      <div class="ai-badge">✨ Gemini AI</div>
+      <div class="ai-badge">✨ Claude AI</div>
       <div class="feedback-meta">
         <div class="feedback-wtitle">${(f.workout_title || '운동').replace(/</g,'&lt;')}</div>
         <div class="feedback-date">${fmtFull(f.date)}</div>
@@ -805,6 +801,7 @@ function renderOneRM(best) {
     buildCharts(workouts, inbody);
     renderOneRM(calcOneRM(workouts));
     renderFeedback(feedbackData);
+    renderCoachFeedback(feedbackData);
   } catch (e) {
     console.error(e);
     $('last-updated').textContent = '데이터 로드 실패';
@@ -822,85 +819,23 @@ document.querySelectorAll('.tab-btn').forEach((btn) => {
 });
 
 // ── AI Coach ────────────────────────────────────────────────
-(function initKeyUI() {
-  const input = $('claude-key-input');
-  const saved = localStorage.getItem('claude_api_key');
-  if (saved) input.value = saved;
-
-  $('save-key-btn').addEventListener('click', () => {
-    const key = input.value.trim();
-    if (!key) return;
-    localStorage.setItem('claude_api_key', key);
-    const btn = $('save-key-btn');
-    btn.textContent = '저장됨 ✓';
-    setTimeout(() => { btn.textContent = '저장'; }, 1800);
-  });
-})();
-
-$('feedback-today-btn').addEventListener('click', async () => {
-  const apiKey = localStorage.getItem('claude_api_key') || $('claude-key-input').value.trim();
-  if (!apiKey) {
-    alert('Claude API 키를 먼저 입력하고 저장해주세요.');
+function renderCoachFeedback(data) {
+  const container = $('coach-feedback-list');
+  const feedbacks = (data.feedbacks || []).slice(0, 10);
+  if (!feedbacks.length) {
+    container.innerHTML = '<div class="chat-empty">아직 피드백이 없습니다.<br><span style="font-size:.8rem;color:var(--muted)">GitHub Actions가 매시간 자동으로 생성합니다.</span></div>';
     return;
   }
-
-  const latest = [...allWorkouts].sort((a, b) => new Date(b.start_time) - new Date(a.start_time))[0];
-  if (!latest) {
-    alert('운동 데이터가 없습니다. 잠시 후 다시 시도해주세요.');
-    return;
-  }
-
-  const btn = $('feedback-today-btn');
-  const inner = $('feedback-btn-inner');
-  btn.disabled = true;
-  inner.innerHTML = '<span class="spinner"></span> 분석 중…';
-
-  const chatArea = $('chat-area');
-  const emptyEl = $('chat-empty');
-  if (emptyEl) emptyEl.remove();
-
-  const msgId = 'msg-' + Date.now();
-  chatArea.insertAdjacentHTML('afterbegin', `
-    <div class="chat-msg" id="${msgId}">
+  container.innerHTML = feedbacks.map((f) => `
+    <div class="chat-msg">
       <div class="chat-msg-header">
         <span class="chat-msg-badge">✨ Claude AI</span>
-        <span class="chat-msg-workout">${(latest.title || '운동').replace(/</g, '&lt;')}</span>
-        <span class="chat-msg-date">${fmtFull(latest.start_time)}</span>
+        <span class="chat-msg-workout">${(f.workout_title || '운동').replace(/</g,'&lt;')}</span>
+        <span class="chat-msg-date">${fmtFull(f.date)}</span>
       </div>
-      <div class="chat-msg-body" id="${msgId}-body">분석 중…</div>
-    </div>`);
-
-  try {
-    const prompt = `다음 운동 기록을 분석해서 한국어로 피드백 해줘. 볼륨, 강도, 잘한 점, 개선점, 다음 운동 조언 포함: ${JSON.stringify(latest, null, 2)}`;
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': apiKey,
-        'anthropic-version': '2023-06-01',
-      },
-      body: JSON.stringify({
-        model: 'claude-opus-4-7',
-        max_tokens: 1024,
-        messages: [{ role: 'user', content: prompt }],
-      }),
-    });
-
-    if (!res.ok) {
-      const errText = await res.text();
-      throw new Error(`API 오류 ${res.status}: ${errText}`);
-    }
-
-    const data = await res.json();
-    const text = data.content?.[0]?.text ?? '(응답 없음)';
-    document.getElementById(msgId + '-body').textContent = text;
-  } catch (err) {
-    document.getElementById(msgId + '-body').textContent = '⚠️ ' + err.message;
-  } finally {
-    btn.disabled = false;
-    inner.textContent = '✨ 오늘 운동 피드백';
-  }
-});
+      <div class="chat-msg-body">${(f.feedback || '').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</div>
+    </div>`).join('');
+}
 </script>
 </body>
 </html>
