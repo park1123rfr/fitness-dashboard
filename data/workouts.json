@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-04T09:39:40.550Z",
+  "updated_at": "2026-05-04T11:46:18.010Z",
   "total": 54,
   "workouts": [
     {
@@ -4002,7 +4002,7 @@
         },
         {
           "index": 1,
-          "title": "���스트 프레스 (밴드)",
+          "title": "체스트 프레스 (밴드)",
           "notes": "",
           "exercise_template_id": "7EB3F7C3",
           "superset_id": null,
@@ -12249,7 +12249,7 @@
         },
         {
           "index": 4,
-          "title": "루마니안 데드리프트 (바벨)",
+          "title": "루마니안 데드리프�� (바벨)",
           "notes": "",
           "exercise_template_id": "2B4B7310",
           "superset_id": null,
