@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-08T08:20:15.894Z",
+  "updated_at": "2026-05-08T10:22:16.995Z",
   "total": 56,
   "workouts": [
     {
@@ -3539,7 +3539,7 @@
     },
     {
       "id": "15a47b35-1ca8-43f0-81a5-70ee232aa0a2",
-      "title": "상체 스트랭스",
+      "title": "상체 스트랭��",
       "routine_id": null,
       "description": "",
       "start_time": "2026-04-19T06:25:21+00:00",
@@ -7373,7 +7373,7 @@
       "exercises": [
         {
           "index": 0,
-          "title": "스트레이트 암 풀다운 (케이블)",
+          "title": "스트레이트 암 풀���운 (케이블)",
           "notes": "",
           "exercise_template_id": "D2387AB1",
           "superset_id": null,
