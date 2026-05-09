@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-09T17:48:11.596Z",
+  "updated_at": "2026-05-09T18:57:00.204Z",
   "total": 57,
   "workouts": [
     {
@@ -6451,7 +6451,7 @@
         },
         {
           "index": 2,
-          "title": "체스�� 플라이 (밴드)",
+          "title": "체스트 플라이 (밴드)",
           "notes": "",
           "exercise_template_id": "DDB7C19F",
           "superset_id": null,
@@ -11263,7 +11263,7 @@
       "exercises": [
         {
           "index": 0,
-          "title": "불가리��� 스플릿 스쿼트",
+          "title": "불가리안 스플릿 스쿼트",
           "notes": "",
           "exercise_template_id": "B5D3A742",
           "superset_id": null,
