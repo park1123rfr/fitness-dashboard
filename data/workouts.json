@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-09T11:49:40.028Z",
+  "updated_at": "2026-05-09T13:11:50.453Z",
   "total": 57,
   "workouts": [
     {
@@ -220,7 +220,7 @@
         },
         {
           "index": 4,
-          "title": "풀 업 (어시스트)",
+          "title": "풀 업 (어시스���)",
           "notes": "",
           "exercise_template_id": "2C37EC5E",
           "superset_id": null,
@@ -998,7 +998,7 @@
         },
         {
           "index": 2,
-          "title": "리��스 펙덱 플라이 (머신)",
+          "title": "리버스 펙덱 플라이 (머신)",
           "notes": "",
           "exercise_template_id": "D8281C62",
           "superset_id": null,
@@ -7304,7 +7304,7 @@
         },
         {
           "index": 7,
-          "title": "리버스 펙덱 플라이 (머신)",
+          "title": "리버스 펙�� 플라이 (머신)",
           "notes": "",
           "exercise_template_id": "D8281C62",
           "superset_id": null,
