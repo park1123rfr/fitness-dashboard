@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-09T14:48:21.778Z",
+  "updated_at": "2026-05-09T15:49:26.954Z",
   "total": 57,
   "workouts": [
     {
@@ -220,7 +220,7 @@
         },
         {
           "index": 4,
-          "title": "풀 업 (어시스���)",
+          "title": "풀 업 (어시스트)",
           "notes": "",
           "exercise_template_id": "2C37EC5E",
           "superset_id": null,
@@ -998,7 +998,7 @@
         },
         {
           "index": 2,
-          "title": "리��스 펙덱 플라이 (머신)",
+          "title": "리버스 펙덱 플라이 (머신)",
           "notes": "",
           "exercise_template_id": "D8281C62",
           "superset_id": null,
@@ -6451,7 +6451,7 @@
         },
         {
           "index": 2,
-          "title": "체스트 플라이 (밴드)",
+          "title": "체스�� 플라이 (밴드)",
           "notes": "",
           "exercise_template_id": "DDB7C19F",
           "superset_id": null,
@@ -7638,7 +7638,7 @@
         },
         {
           "index": 7,
-          "title": "시티드 인클라인 컬 (덤벨)",
+          "title": "��티드 인클라인 컬 (덤벨)",
           "notes": "",
           "exercise_template_id": "8BAB2735",
           "superset_id": null,
