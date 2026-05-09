@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-09T20:51:14.079Z",
+  "updated_at": "2026-05-09T21:40:30.838Z",
   "total": 57,
   "workouts": [
     {
@@ -998,7 +998,7 @@
         },
         {
           "index": 2,
-          "title": "리버스 펙덱 플라이 (머신)",
+          "title": "리��스 펙덱 플라이 (머신)",
           "notes": "",
           "exercise_template_id": "D8281C62",
           "superset_id": null,
@@ -11263,7 +11263,7 @@
       "exercises": [
         {
           "index": 0,
-          "title": "불가리��� 스플릿 스쿼트",
+          "title": "불가리안 스플릿 스쿼트",
           "notes": "",
           "exercise_template_id": "B5D3A742",
           "superset_id": null,
