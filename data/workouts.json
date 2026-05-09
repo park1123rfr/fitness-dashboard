@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-09T00:01:14.847Z",
+  "updated_at": "2026-05-09T04:21:13.559Z",
   "total": 56,
   "workouts": [
     {
@@ -4218,7 +4218,7 @@
         },
         {
           "index": 7,
-          "title": "��버스 펙덱 플라이 (머신)",
+          "title": "리버스 펙덱 플라이 (머신)",
           "notes": "",
           "exercise_template_id": "D8281C62",
           "superset_id": null,
@@ -7373,7 +7373,7 @@
       "exercises": [
         {
           "index": 0,
-          "title": "스트레이트 암 풀다운 (케이블)",
+          "title": "스트레이트 암 풀���운 (케이블)",
           "notes": "",
           "exercise_template_id": "D2387AB1",
           "superset_id": null,
