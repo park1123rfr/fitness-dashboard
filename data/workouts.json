@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-09T19:57:48.098Z",
+  "updated_at": "2026-05-09T20:51:14.079Z",
   "total": 57,
   "workouts": [
     {
@@ -220,7 +220,7 @@
         },
         {
           "index": 4,
-          "title": "풀 업 (어시스트)",
+          "title": "풀 업 (어시스���)",
           "notes": "",
           "exercise_template_id": "2C37EC5E",
           "superset_id": null,
