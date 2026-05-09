@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-09T21:40:30.838Z",
+  "updated_at": "2026-05-09T22:39:50.517Z",
   "total": 57,
   "workouts": [
     {
@@ -220,7 +220,7 @@
         },
         {
           "index": 4,
-          "title": "풀 업 (어시스���)",
+          "title": "풀 업 (어시스트)",
           "notes": "",
           "exercise_template_id": "2C37EC5E",
           "superset_id": null,
@@ -6451,7 +6451,7 @@
         },
         {
           "index": 2,
-          "title": "체스�� 플라이 (밴드)",
+          "title": "체스트 플라이 (밴드)",
           "notes": "",
           "exercise_template_id": "DDB7C19F",
           "superset_id": null,
@@ -10206,7 +10206,7 @@
         },
         {
           "index": 4,
-          "title": "레터럴 레이즈 (케이블)",
+          "title": "레터럴 레이즈 (���이블)",
           "notes": "",
           "exercise_template_id": "BE289E45",
           "superset_id": null,
@@ -11263,7 +11263,7 @@
       "exercises": [
         {
           "index": 0,
-          "title": "불가리안 스플릿 스쿼트",
+          "title": "불가리��� 스플릿 스쿼트",
           "notes": "",
           "exercise_template_id": "B5D3A742",
           "superset_id": null,
