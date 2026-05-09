@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-09T09:17:01.098Z",
+  "updated_at": "2026-05-09T10:55:08.361Z",
   "total": 57,
   "workouts": [
     {
@@ -220,7 +220,7 @@
         },
         {
           "index": 4,
-          "title": "풀 업 (어시스���)",
+          "title": "풀 업 (어시스트)",
           "notes": "",
           "exercise_template_id": "2C37EC5E",
           "superset_id": null,
@@ -6451,7 +6451,7 @@
         },
         {
           "index": 2,
-          "title": "체스트 플라이 (밴드)",
+          "title": "체스�� 플라이 (밴드)",
           "notes": "",
           "exercise_template_id": "DDB7C19F",
           "superset_id": null,
