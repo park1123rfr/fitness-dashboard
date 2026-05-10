@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-10T16:52:22.181Z",
+  "updated_at": "2026-05-10T17:50:08.801Z",
   "total": 58,
   "workouts": [
     {
@@ -2264,7 +2264,7 @@
     },
     {
       "id": "9c12a29d-b193-4e2a-9005-f0aab047e63d",
-      "title": "���슴 팔",
+      "title": "가슴 팔",
       "routine_id": "091519e3-59d0-4b0a-a7a7-2ed604bb67f2",
       "description": "",
       "start_time": "2026-04-30T13:09:33+00:00",
@@ -6886,7 +6886,7 @@
         },
         {
           "index": 2,
-          "title": "��스트 플라이 (밴드)",
+          "title": "체스트 플라이 (밴드)",
           "notes": "",
           "exercise_template_id": "DDB7C19F",
           "superset_id": null,
@@ -12101,7 +12101,7 @@
         },
         {
           "index": 3,
-          "title": "시티드 숄더 프레드 (��신)",
+          "title": "시티드 숄더 프레드 (머신)",
           "notes": "",
           "exercise_template_id": "9237BAD1",
           "superset_id": null,
