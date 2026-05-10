@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-10T18:59:13.456Z",
+  "updated_at": "2026-05-10T20:01:38.240Z",
   "total": 58,
   "workouts": [
     {
@@ -4646,7 +4646,7 @@
       "exercises": [
         {
           "index": 0,
-          "title": "인클라인 체스트 프레��� (머신)",
+          "title": "인클라인 체스트 프레스 (머신)",
           "notes": "",
           "exercise_template_id": "FBF92739",
           "superset_id": null,
