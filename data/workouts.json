@@ -1,7 +1,331 @@
 {
-  "updated_at": "2026-05-11T10:36:12.526Z",
-  "total": 58,
+  "updated_at": "2026-05-11T13:46:36.683Z",
+  "total": 59,
   "workouts": [
+    {
+      "id": "2a8cc4ab-d956-4fdf-8064-396f3faa2eb6",
+      "title": "가슴 팔 근비대",
+      "routine_id": "091519e3-59d0-4b0a-a7a7-2ed604bb67f2",
+      "description": "",
+      "start_time": "2026-05-11T12:30:54+00:00",
+      "end_time": "2026-05-11T13:36:39+00:00",
+      "updated_at": "2026-05-11T13:36:40.695Z",
+      "created_at": "2026-05-11T13:36:40.695Z",
+      "exercises": [
+        {
+          "index": 0,
+          "title": "인클라인 체스트 프레스 (머신)",
+          "notes": "",
+          "exercise_template_id": "FBF92739",
+          "superset_id": null,
+          "sets": [
+            {
+              "index": 0,
+              "type": "normal",
+              "weight_kg": 65,
+              "reps": 10,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": 7,
+              "custom_metric": null
+            },
+            {
+              "index": 1,
+              "type": "normal",
+              "weight_kg": 65,
+              "reps": 10,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": 7.5,
+              "custom_metric": null
+            },
+            {
+              "index": 2,
+              "type": "normal",
+              "weight_kg": 65,
+              "reps": 10,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": 8.5,
+              "custom_metric": null
+            },
+            {
+              "index": 3,
+              "type": "normal",
+              "weight_kg": 65,
+              "reps": 8,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": 9.5,
+              "custom_metric": null
+            },
+            {
+              "index": 4,
+              "type": "normal",
+              "weight_kg": 40,
+              "reps": 12,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": 9.5,
+              "custom_metric": null
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "title": "딥스 (어시스트)",
+          "notes": "",
+          "exercise_template_id": "E9E4089F",
+          "superset_id": null,
+          "sets": [
+            {
+              "index": 0,
+              "type": "normal",
+              "weight_kg": 60,
+              "reps": 10,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": 7.5,
+              "custom_metric": null
+            },
+            {
+              "index": 1,
+              "type": "normal",
+              "weight_kg": 60,
+              "reps": 10,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": 8,
+              "custom_metric": null
+            },
+            {
+              "index": 2,
+              "type": "normal",
+              "weight_kg": 60,
+              "reps": 10,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": 8.5,
+              "custom_metric": null
+            },
+            {
+              "index": 3,
+              "type": "normal",
+              "weight_kg": 60,
+              "reps": 10,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": 8.5,
+              "custom_metric": null
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "title": "벤치 프레스 (바벨)",
+          "notes": "",
+          "exercise_template_id": "79D0BB3A",
+          "superset_id": null,
+          "sets": [
+            {
+              "index": 0,
+              "type": "normal",
+              "weight_kg": 60,
+              "reps": 10,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": 8.5,
+              "custom_metric": null
+            },
+            {
+              "index": 1,
+              "type": "normal",
+              "weight_kg": 60,
+              "reps": 10,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": 8.5,
+              "custom_metric": null
+            },
+            {
+              "index": 2,
+              "type": "normal",
+              "weight_kg": 60,
+              "reps": 10,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": 9,
+              "custom_metric": null
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "title": "인클라인 벤치 프레스 (덤벨)",
+          "notes": "",
+          "exercise_template_id": "07B38369",
+          "superset_id": null,
+          "sets": [
+            {
+              "index": 0,
+              "type": "normal",
+              "weight_kg": 45,
+              "reps": 10,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": null,
+              "custom_metric": null
+            },
+            {
+              "index": 1,
+              "type": "normal",
+              "weight_kg": 45,
+              "reps": 10,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": null,
+              "custom_metric": null
+            },
+            {
+              "index": 2,
+              "type": "normal",
+              "weight_kg": 45,
+              "reps": 10,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": null,
+              "custom_metric": null
+            },
+            {
+              "index": 3,
+              "type": "normal",
+              "weight_kg": 45,
+              "reps": 10,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": null,
+              "custom_metric": null
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "title": "스컬 크러셔 (바벨)",
+          "notes": "",
+          "exercise_template_id": "875F585F",
+          "superset_id": 0,
+          "sets": [
+            {
+              "index": 0,
+              "type": "normal",
+              "weight_kg": 20,
+              "reps": 10,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": 8,
+              "custom_metric": null
+            },
+            {
+              "index": 1,
+              "type": "normal",
+              "weight_kg": 20,
+              "reps": 10,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": 9,
+              "custom_metric": null
+            },
+            {
+              "index": 2,
+              "type": "normal",
+              "weight_kg": 20,
+              "reps": 10,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": null,
+              "custom_metric": null
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "title": "바이셉스 컬 (바벨)",
+          "notes": "",
+          "exercise_template_id": "A5AC6449",
+          "superset_id": 0,
+          "sets": [
+            {
+              "index": 0,
+              "type": "normal",
+              "weight_kg": 20,
+              "reps": 10,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": 7,
+              "custom_metric": null
+            },
+            {
+              "index": 1,
+              "type": "normal",
+              "weight_kg": 20,
+              "reps": 12,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": 8.5,
+              "custom_metric": null
+            },
+            {
+              "index": 2,
+              "type": "normal",
+              "weight_kg": 20,
+              "reps": 10,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": null,
+              "custom_metric": null
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "title": "프리처 컬 (덤벨)",
+          "notes": "",
+          "exercise_template_id": "FAB6EB2F",
+          "superset_id": null,
+          "sets": [
+            {
+              "index": 0,
+              "type": "normal",
+              "weight_kg": 29.48,
+              "reps": 10,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": null,
+              "custom_metric": null
+            }
+          ]
+        },
+        {
+          "index": 7,
+          "title": "Overhead Triceps Extension (Cable)",
+          "notes": "",
+          "exercise_template_id": "B5EFBF9C",
+          "superset_id": null,
+          "sets": [
+            {
+              "index": 0,
+              "type": "normal",
+              "weight_kg": 15.6,
+              "reps": 10,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": null,
+              "custom_metric": null
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "894954fb-62df-4650-926b-11af55f2c4f2",
       "title": "등 어깨 근비대",
