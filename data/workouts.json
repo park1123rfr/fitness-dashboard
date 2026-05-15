@@ -1,7 +1,77 @@
 {
-  "updated_at": "2026-05-15T02:54:44.270Z",
-  "total": 59,
+  "updated_at": "2026-05-15T06:32:49.206Z",
+  "total": 60,
   "workouts": [
+    {
+      "id": "8d09f3ff-9be8-470e-854b-0e5ffd6517bd",
+      "title": "하체 근비대",
+      "routine_id": "b676226c-725d-43cb-970a-bca0f74a8448",
+      "description": "컨디션 저조. 전신 펌핑운동으로 전환",
+      "start_time": "2026-05-15T05:12:43+00:00",
+      "end_time": "2026-05-15T05:26:01+00:00",
+      "updated_at": "2026-05-15T05:26:17.552Z",
+      "created_at": "2026-05-15T05:26:17.552Z",
+      "exercises": [
+        {
+          "index": 0,
+          "title": "시티드 레그 컬 (머신)",
+          "notes": "",
+          "exercise_template_id": "11A123F3",
+          "superset_id": null,
+          "sets": [
+            {
+              "index": 0,
+              "type": "normal",
+              "weight_kg": 56.69911367945497,
+              "reps": 10,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": 6,
+              "custom_metric": null
+            },
+            {
+              "index": 1,
+              "type": "normal",
+              "weight_kg": 58.96707822663317,
+              "reps": 10,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": 7,
+              "custom_metric": null
+            },
+            {
+              "index": 2,
+              "type": "normal",
+              "weight_kg": 58.96707822663317,
+              "reps": 10,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": 7.5,
+              "custom_metric": null
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "title": "핵 스쿼트 (머신)",
+          "notes": "",
+          "exercise_template_id": "1E42FD5F",
+          "superset_id": null,
+          "sets": [
+            {
+              "index": 0,
+              "type": "normal",
+              "weight_kg": 100,
+              "reps": 6,
+              "distance_meters": null,
+              "duration_seconds": null,
+              "rpe": 8,
+              "custom_metric": null
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "2a8cc4ab-d956-4fdf-8064-396f3faa2eb6",
       "title": "가슴 팔 근비대",
@@ -2528,7 +2598,7 @@
         },
         {
           "index": 4,
-          "title": "시티드 케이블 로우 - 넓은 그립",
+          "title": "시티드 케이블 로우 - 넓은 ��립",
           "notes": "",
           "exercise_template_id": "C3BCABB3",
           "superset_id": null,
